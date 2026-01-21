@@ -3,10 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Free AI Resume Helper for Freshers</title>
-  <meta name="description" content="Create a professional resume in minutes using AI. Built for freshers and students." />
+  <title>Free AI Resume Template for Freshers</title>
 
-  <!-- CSS START -->
   <style>
     :root {
       --bg: #0b0f19;
@@ -20,7 +18,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: system-ui, sans-serif;
     }
 
     body {
@@ -29,221 +27,136 @@
       line-height: 1.6;
     }
 
-    .hero {
-      min-height: 100vh;
-      padding: 1.5rem;
+    header {
+      padding: 3rem 1.5rem;
+      text-align: center;
       background: radial-gradient(circle at top, #1a1f3c, var(--bg));
     }
 
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-weight: 700;
-      font-size: 1.2rem;
-    }
-
-    .nav-btn {
-      color: var(--text);
-      text-decoration: none;
-      border: 1px solid var(--accent);
-      padding: 0.4rem 0.8rem;
-      border-radius: 6px;
-    }
-
-    .hero-content {
-      max-width: 600px;
-      margin: 6rem auto 0;
-      text-align: center;
-    }
-
-    .hero-content h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero-content span {
+    header h1 span {
       color: var(--accent);
     }
 
-    .hero-content p {
+    header p {
       color: var(--muted);
-      margin-bottom: 2rem;
+      margin: 1rem 0 2rem;
     }
 
-    .cta-btn {
+    .btn {
       background: var(--accent);
-      color: white;
+      color: #fff;
       padding: 0.8rem 1.4rem;
       border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
+      cursor: pointer;
+      border: none;
     }
 
     section {
-      padding: 4rem 1.5rem;
-      max-width: 1000px;
+      max-width: 900px;
       margin: auto;
+      padding: 3rem 1.5rem;
     }
 
-    section h2 {
+    .resume {
+      background: white;
+      color: #000;
+      padding: 2rem;
+      border-radius: 8px;
+    }
+
+    .resume h2 {
+      border-bottom: 2px solid #000;
+      margin-bottom: 1rem;
+    }
+
+    .resume h3 {
+      margin-top: 1.2rem;
+    }
+
+    .download {
       text-align: center;
-      margin-bottom: 2rem;
+      margin-top: 2rem;
     }
 
-    .feature-grid,
-    .steps {
-      display: grid;
-      gap: 1.5rem;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    }
-
-    .card,
-    .step {
-      background: var(--card);
-      padding: 1.5rem;
-      border-radius: 10px;
-      text-align: center;
-    }
-
-    .step span {
-      display: inline-block;
-      background: var(--accent);
-      width: 32px;
-      height: 32px;
-      line-height: 32px;
-      border-radius: 50%;
-      margin-bottom: 0.5rem;
-    }
-
-    .signup {
-      text-align: center;
-    }
-
-    form {
-      display: flex;
-      gap: 0.5rem;
-      justify-content: center;
-      margin-top: 1rem;
-      flex-wrap: wrap;
-    }
-
-    input {
-      padding: 0.6rem;
-      border-radius: 6px;
-      border: none;
-      min-width: 220px;
-    }
-
-    button {
-      padding: 0.6rem 1rem;
-      background: var(--accent);
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .form-message {
-      margin-top: 1rem;
-      color: var(--muted);
-    }
-
-    .footer {
+    footer {
       text-align: center;
       padding: 2rem;
       color: var(--muted);
-      font-size: 0.9rem;
+    }
+
+    /* PRINT STYLES */
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      .resume, .resume * {
+        visibility: visible;
+      }
+      .resume {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        border-radius: 0;
+      }
     }
   </style>
-  <!-- CSS END -->
 </head>
 
 <body>
 
   <!-- HERO -->
-  <header class="hero">
-    <nav class="nav">
-      <div class="logo">ResumeAI</div>
-      <a href="#signup" class="nav-btn">Get Started</a>
-    </nav>
-
-    <div class="hero-content">
-      <h1>Build a Job-Ready Resume<br><span>In Minutes, Not Days</span></h1>
-      <p>Free AI resume helper designed specifically for freshers and students.</p>
-      <a href="#signup" class="cta-btn">Get Free Resume Help</a>
-    </div>
+  <header>
+    <h1>Free Resume Template<br><span>For Freshers</span></h1>
+    <p>Simple. ATS-friendly. Ready in 1 click.</p>
+    <button class="btn" onclick="downloadResume()">Download Resume (PDF)</button>
   </header>
 
-  <!-- FEATURES -->
+  <!-- RESUME TEMPLATE -->
   <section>
-    <h2>Why Freshers Love ResumeAI</h2>
-    <div class="feature-grid">
-      <div class="card">
-        <h3>AI-Powered Content</h3>
-        <p>Generate strong bullet points even with zero experience.</p>
-      </div>
-      <div class="card">
-        <h3>ATS Friendly</h3>
-        <p>Optimized to pass applicant tracking systems.</p>
-      </div>
-      <div class="card">
-        <h3>100% Free</h3>
-        <p>No sign-up walls. No credit card. Just value.</p>
-      </div>
+    <div class="resume" id="resume">
+      <h2>Your Name</h2>
+      <p>Email: your@email.com | Phone: 9XXXXXXXXX | City, India</p>
+
+      <h3>Career Objective</h3>
+      <p>Motivated fresher seeking an entry-level position to apply my skills and grow professionally.</p>
+
+      <h3>Education</h3>
+      <p><strong>Bachelor’s Degree</strong><br>
+      University Name — 2021–2024</p>
+
+      <h3>Skills</h3>
+      <ul>
+        <li>HTML, CSS, JavaScript</li>
+        <li>Basic Computer Skills</li>
+        <li>Communication</li>
+      </ul>
+
+      <h3>Projects</h3>
+      <p><strong>Resume Builder Website</strong><br>
+      Built a responsive resume landing page using HTML & CSS.</p>
+
+      <h3>Declaration</h3>
+      <p>I hereby declare that the above information is true to the best of my knowledge.</p>
     </div>
-  </section>
 
-  <!-- HOW IT WORKS -->
-  <section>
-    <h2>How It Works</h2>
-    <div class="steps">
-      <div class="step"><span>1</span><p>Enter your basic details</p></div>
-      <div class="step"><span>2</span><p>AI generates resume content</p></div>
-      <div class="step"><span>3</span><p>Download & apply confidently</p></div>
+    <div class="download">
+      <button class="btn" onclick="downloadResume()">Download as PDF</button>
     </div>
-  </section>
-
-  <!-- SIGNUP -->
-  <section class="signup" id="signup">
-    <h2>Get Early Access</h2>
-    <p>Be the first to use our AI resume helper.</p>
-
-    <form id="emailForm">
-      <input type="email" id="email" placeholder="Enter your email" required />
-      <button type="submit">Notify Me</button>
-    </form>
-
-    <p class="form-message" id="formMessage"></p>
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <p>© 2026 ResumeAI. Built for freshers.</p>
+  <footer>
+    © 2026 ResumeAI — Built for Freshers
   </footer>
 
-  <!-- JS START -->
   <script>
-    const form = document.getElementById("emailForm");
-    const message = document.getElementById("formMessage");
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const email = document.getElementById("email").value;
-
-      if (!email) {
-        message.textContent = "Please enter a valid email.";
-        return;
-      }
-
-      message.textContent = "Thanks! We'll notify you soon 🚀";
-      form.reset();
-    });
+    function downloadResume() {
+      window.print();
+    }
   </script>
-  <!-- JS END -->
 
 </body>
 </html>
