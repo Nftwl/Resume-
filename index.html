@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free AI Resume Helper for Freshers</title>
+  <meta name="description" content="Create a professional resume in minutes using AI. Built for freshers and students." />
+
+  <!-- CSS START -->
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card: #11162a;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #6366f1;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .hero {
+      min-height: 100vh;
+      padding: 1.5rem;
+      background: radial-gradient(circle at top, #1a1f3c, var(--bg));
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .nav-btn {
+      color: var(--text);
+      text-decoration: none;
+      border: 1px solid var(--accent);
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+    }
+
+    .hero-content {
+      max-width: 600px;
+      margin: 6rem auto 0;
+      text-align: center;
+    }
+
+    .hero-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content span {
+      color: var(--accent);
+    }
+
+    .hero-content p {
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .cta-btn {
+      background: var(--accent);
+      color: white;
+      padding: 0.8rem 1.4rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    section {
+      padding: 4rem 1.5rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .feature-grid,
+    .steps {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .card,
+    .step {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .step span {
+      display: inline-block;
+      background: var(--accent);
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      border-radius: 50%;
+      margin-bottom: 0.5rem;
+    }
+
+    .signup {
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+
+    input {
+      padding: 0.6rem;
+      border-radius: 6px;
+      border: none;
+      min-width: 220px;
+    }
+
+    button {
+      padding: 0.6rem 1rem;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .form-message {
+      margin-top: 1rem;
+      color: var(--muted);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+  <!-- CSS END -->
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <nav class="nav">
+      <div class="logo">ResumeAI</div>
+      <a href="#signup" class="nav-btn">Get Started</a>
+    </nav>
+
+    <div class="hero-content">
+      <h1>Build a Job-Ready Resume<br><span>In Minutes, Not Days</span></h1>
+      <p>Free AI resume helper designed specifically for freshers and students.</p>
+      <a href="#signup" class="cta-btn">Get Free Resume Help</a>
+    </div>
+  </header>
+
+  <!-- FEATURES -->
+  <section>
+    <h2>Why Freshers Love ResumeAI</h2>
+    <div class="feature-grid">
+      <div class="card">
+        <h3>AI-Powered Content</h3>
+        <p>Generate strong bullet points even with zero experience.</p>
+      </div>
+      <div class="card">
+        <h3>ATS Friendly</h3>
+        <p>Optimized to pass applicant tracking systems.</p>
+      </div>
+      <div class="card">
+        <h3>100% Free</h3>
+        <p>No sign-up walls. No credit card. Just value.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section>
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step"><span>1</span><p>Enter your basic details</p></div>
+      <div class="step"><span>2</span><p>AI generates resume content</p></div>
+      <div class="step"><span>3</span><p>Download & apply confidently</p></div>
+    </div>
+  </section>
+
+  <!-- SIGNUP -->
+  <section class="signup" id="signup">
+    <h2>Get Early Access</h2>
+    <p>Be the first to use our AI resume helper.</p>
+
+    <form id="emailForm">
+      <input type="email" id="email" placeholder="Enter your email" required />
+      <button type="submit">Notify Me</button>
+    </form>
+
+    <p class="form-message" id="formMessage"></p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2026 ResumeAI. Built for freshers.</p>
+  </footer>
+
+  <!-- JS START -->
+  <script>
+    const form = document.getElementById("emailForm");
+    const message = document.getElementById("formMessage");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+
+      if (!email) {
+        message.textContent = "Please enter a valid email.";
+        return;
+      }
+
+      message.textContent = "Thanks! We'll notify you soon 🚀";
+      form.reset();
+    });
+  </script>
+  <!-- JS END -->
+
+</body>
+</html>
